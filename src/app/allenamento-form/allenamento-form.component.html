@@ -1,39 +1,43 @@
 <div class="formStyle">
   <div>
-    <form style=" justify-content: space-around;flex-direction: column;display: flex">
-      <mat-form-field appearance="fill">
+    <form style="flex-direction: column;display: flex;">
+      <div>
+      <mat-form-field appearance="fill" style="margin-right: 10px">
         <mat-label for="tipo">
           Gruppo Muscolare
         </mat-label>
-        <mat-select id="tipo">
-          <mat-option *ngFor="let o of tipoOptions"  [value]="o" (onSelectionChange)="setSelectedType(o)">
+        <mat-select id="tipo" #type>
+          <mat-option *ngFor="let o of tipoOptions"  [value]="o">
             {{o}}
           </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label for="esercizi">
-          esercizio
+          Esercizio
         </mat-label>
-        <mat-select id="esercizi">
-          <mat-option *ngFor="let o of exerciseOptions" [value]="o" (onSelectionChange)="setSelectedExcercise(o)" >
+        <mat-select id="esercizi" #excercise >
+          <mat-option *ngFor="let o of exerciseOptions" [value]="o">
             {{o}}
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <mat-form-field>
+      </div>
+        <div style="justify-content: space-around">
+      <mat-form-field style="margin-left:23%;margin-right:25%;width: 15%">
         <mat-label for="serie">
           Serie
         </mat-label>
-        <input  matInput  formControl id="serie" #serie type="number" value="1" maxlength="10">
+        <input  matInput id="serie" #serie type="number" value="1" maxlength="10">
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field style="width: 15%">
         <mat-label for="ripetizioni" style="margin-top: 15px">
           Rep
         </mat-label>
-        <input  matInput formControl id="ripetizioni" #rep type="number" value="1" maxlength="40">
+        <input  matInput id="ripetizioni" #rep type="number" value="1" maxlength="40">
       </mat-form-field>
-        <button mat-raised-button (click)="aggiungi(selectedType,selectedExcercise,serie,rep)">AGGIUNGI</button>
+        </div>
+        <button mat-raised-button (click)="aggiungi(type.value,excercise.value,serie.value,rep.value)">AGGIUNGI</button>
     </form>
   </div>
 </div>

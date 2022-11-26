@@ -11,6 +11,8 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {SharedService} from "./lista-allenamento.service";
+import {MatCardModule} from "@angular/material/card";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {SharedService} from "./lista-allenamento.service";
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule,
+    FormsModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

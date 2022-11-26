@@ -1,7 +1,15 @@
-<div>
+<div style="width:max-content;justify-self: center;margin: auto;">
   <ul>
-  <li *ngFor="let a of listaAllenamenti">
-     {{a.nome}}
-  </li>
+  <a *ngFor="let a of listaAllenamenti" >
+    <mat-card style="flex-direction: row;display: flex; align-content: center;margin-top: 10px;color:white; height: 50px;">
+      <mat-card-content></mat-card-content>
+      <mat-card-content style="flex-direction: row;display: flex; justify-content: space-around;margin-top: 10px;color:white;">
+        <p>Muscolo =  {{a.tipo}}</p>
+        <p>Esercizio = {{a.nome}}</p>
+        <p>Serie = {{a.numeroSerie}}</p>
+        <p>Rep = {{a.numeroRipetizioni}}</p>
+      </mat-card-content>
+    </mat-card>
+  </a>
   </ul>
 </div>
