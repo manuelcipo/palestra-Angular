@@ -22,10 +22,9 @@ export class AllenamentoFormComponent implements OnInit{
 
 
 
-  aggiungi(tipo:string, exercise:string, rep:any,serie:any):boolean{
-    if(tipo!="" && exercise!=""){
+  aggiungi(tipo:string, exercise:string, rep:any,serie:any){
+    if(tipo!=undefined && exercise!=undefined){
     this.listaAllenamenti?.push(new Allenamento(tipo,serie,rep,exercise))}
-    return false;
   }
 
 

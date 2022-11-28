@@ -12,6 +12,5 @@ export class SharedService {
   }
 
   aggiungi(lista:[]){
-    this.listallenamentoSource.next(lista);
   }
 }
